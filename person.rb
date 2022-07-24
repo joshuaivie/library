@@ -1,7 +1,7 @@
 require 'uuid'
 require_relative 'nameable'
 
-class Person
+class Person < Nameable
   attr_reader :id
   attr_accessor :age, :name
 
