@@ -115,12 +115,3 @@ class App
     puts 'Invalid Input'
   end
 end
-
-app = App.new
-app.create_person
-app.create_person
-app.create_book
-app.list_all_books
-app.list_all_people
-app.create_rental
-app.display_rentals_by_person_id
