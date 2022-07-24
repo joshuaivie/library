@@ -47,9 +47,9 @@ class Main
   end
 
   def main
-    puts 'Welcome to School library App!'
+    puts 'Welcome to School library app!'
     choose_option
-    puts 'Thank you for using this App!'
+    puts 'Thank you for using School library app!'
   end
 end
 
