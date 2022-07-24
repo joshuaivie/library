@@ -1,15 +1,16 @@
+require 'uuid'
+
 class Person
   attr_reader :id
   attr_accessor :age, :name
 
-  @@person_count = 0
+  ID = UUID.new
 
   def initialize(age, name = 'Unknown', parent_permission: true)
-    @id = @@person_count
+    @id = ID.generate
     @name = name
     @age = age
     @parent_permission = parent_permission
-    @@person_count += 1
   end
 
   def can_use_services?
