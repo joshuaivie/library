@@ -1,20 +1,32 @@
 require 'uuid'
+require_relative 'nameable'
 
-class Person
-  attr_reader :id
+class Person < Nameable
+  attr_reader :id, :rentals
   attr_accessor :age, :name
 
   ID = UUID.new
 
   def initialize(age, name = 'Unknown', parent_permission: true)
+    super()
     @id = ID.generate
     @name = name
     @age = age
     @parent_permission = parent_permission
+    @rentals = []
   end
 
   def can_use_services?
     of_age? || @parent_permission
+  end
+
+  def correct_name
+    @name
+  end
+
+  def add_rental(rental)
+    @rentals.push(rental) unless @rentals.include?(rental)
+    rental.person = self
   end
 
   private
