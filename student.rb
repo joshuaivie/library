@@ -8,7 +8,13 @@ class Student < Person
     classroom.add_student(self)
   end
 
-  def play_hooky
-    "¯\(ツ)/¯"
+    def can_use_services?
+    of_age?
+  end
+
+  private
+  
+   def of_age?
+    @age >= 18
   end
 end
